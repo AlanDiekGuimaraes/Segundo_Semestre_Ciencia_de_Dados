@@ -25,4 +25,7 @@ Determinantes de Matrizes Específicas:
 Este README fornece uma visão geral das operações básicas e avançadas com matrizes utilizando o NumPy. Para mais detalhes, por favor, consulte os arquivos.
 
 ### Contribuições
-Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para entrar em contato. 
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para entrar em contato.
+
+
+.
