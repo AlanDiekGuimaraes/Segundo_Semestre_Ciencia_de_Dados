@@ -16,3 +16,4 @@ Algumas pastas podem conter seus próprios READMEs com instruções detalhadas s
 Siga as instruções fornecidas nos READMEs ou nos próprios scripts para rodar os projetos em seu ambiente local.
 
 Obrigado por visitar meu repositório de exercícios e projetos do segundo semestre! Fique à vontade para explorar, aprender e usar os códigos conforme sua necessidade.
+
