@@ -55,5 +55,16 @@ print(matriz_soma)
 # Exercício médio: multiplique duas matrizes 2x2.
 matriz1 <- matrix(c(1,2,3,4), nrow = 2, ncol = 2)
 matriz2 <- matrix(c(5,6,7,8), nrow = 2, ncol = 2)
-matriz_mult <- matriz1 * matriz2
+matriz_mult <- matriz1 %*% matriz2
 print(matriz_mult)
+
+# Exercício difícil: Calcule a transposta de uma matrix 3x3.
+matriz <- matrix(1:9, nrow = 3, ncol = 3)
+print(matriz)
+matriz_transposta <- t(matriz)
+print(matriz_transposta)
+
+# Exercício difícil: Calcule a determinante de uma matriz 3x3.
+matriz <- matrix(1:9, nrow = 3, ncol = 3)
+determinante <- det(matriz)
+print(determinante)
