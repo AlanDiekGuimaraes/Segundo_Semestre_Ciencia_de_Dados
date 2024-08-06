@@ -38,3 +38,4 @@ class dias_da_semana(Enum):
 
 print(dias_da_semana.Quarta.value)
 print(dias_da_semana.Quarta.name)
+
