@@ -68,3 +68,35 @@ print(matriz_transposta)
 matriz <- matrix(1:9, nrow = 3, ncol = 3)
 determinante <- det(matriz)
 print(determinante)
+
+# Exercício fácil: Crie um vetor de categorias (fatores) com as cores 'vermelho', 'Azul' e 'Verde'
+cores <- factor(c('vermelho', 'azul', 'verde'))
+print('Cores', cores)
+
+# Exercício fácil: Crie um vetor de fatores para os dias da semana e imprima-os.
+dias_da_semana <- factor(c('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'))
+print(dias_da_semana)
+
+# Exercício médio: Crie um vetor de fatores com as categorias 'Baixo', 'mádio' e 'alto' e ordene-os.
+niveis <- factor(c('Baixo', 'Alto', 'Médio'), levels = c('Baixo', 'Médio', 'Alto'), order = TRUE)
+print(niveis)
+
+# Exercício médio: Converta um vetor de fatores em um vetor numérico.
+categorias <- factor(c('Baixo', 'Alto', 'Médio'), levels = c('Baixo', 'Médio', 'Alto'), order = TRUE)
+numeros <- as.numeric(categorias)
+print(numeros)
+
+# Exercício difícil: Crie um vetor de fatores com as categorias
+# 'Pequeno', 'Médio' e 'Grande' e substitua pequeno por 'Extra Pequeno'.
+tamanhos <- factor(c('Pequeno', 'Médio', 'Grande'), levels = c('Pequeno', 'Médio', 'Grande'), order = TRUE)
+levels(tamanhos)[levels(tamanhos) == 'Pequeno'] <- 'Extra Pequeno'
+print(tamanhos)
+
+# Exercício difícil: Crie um vetor de fatores com 100 elementos aleatórios entre
+# 'Baixo', 'Médio', 'Alto', e calcule a frequência de cada categoria.
+set.seed(123)
+categorias <- c('Baixo', 'Médio', 'Alto')
+vetor <- sample(categorias, 100, replace = TRUE)
+fatores <- factor(vetor, levels = categorias, ordered = TRUE)
+frequencia <- table(fatores)
+print(frequencia)
