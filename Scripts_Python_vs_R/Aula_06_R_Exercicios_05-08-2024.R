@@ -163,4 +163,17 @@ print(indice)
 # Dicionário em Python
 # Exercício fácil: Crie um dicionário com as chaves 'nome', 'idade', e 'cidade'
 # e valores 'Ana', 25 e 'São Paulo'
-dicionario = 
+dicionario <- list(nome='Ana', idade='25', cidade='São Paulo')
+print(dicionario)
+
+#Acesse o valor associado à chave 'idade'no dicionario
+# {'nome': 'Ana', 'idade': '25', 'cidade': 'Sao Paulo'}
+dicionario <- list(nome='Ana', idade='25', cidade='São Paulo')
+idade <- dicionario$idade
+print(idade)
+
+# Exercício médio: Adicione um novo par chave-valor "Profissão': 'engenheira'
+# ao dicionário {'nome': 'Ana', 'idade': '25', 'cidade': 'Sao Paulo'}
+dicionario <- list(nome='Ana', idade='25', cidade='São Paulo')
+dicionario$profissao <- 'Engenheiro'
+print(dicionario)
