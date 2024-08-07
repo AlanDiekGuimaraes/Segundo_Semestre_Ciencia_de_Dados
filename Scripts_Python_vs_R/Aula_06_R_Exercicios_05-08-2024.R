@@ -100,3 +100,67 @@ vetor <- sample(categorias, 100, replace = TRUE)
 fatores <- factor(vetor, levels = categorias, ordered = TRUE)
 frequencia <- table(fatores)
 print(frequencia)
+
+#Lista em R
+# Crie uma lista contendo os números de 1 a 5.
+lista <- list(1, 2, 3, 4, 5)
+print(lista)
+
+#Exercicio Facil: Adicione um elemento "6" ao final da lista [1,2,3,4,5]
+ista <- list(1,2,3,4,5)
+lista[[6]] <- 6
+print(lista)
+
+#Exercicio Medio: Remova o terceiro elemento da lista [1,2,3,4,5]
+lista <- list(1,2,3,4,5)
+lista <- lista[-3]
+print(lista)
+
+#Exercicio Dificil: Inverta a ordem dos elementos da lista
+lista <- list(1,2,3,4,5)
+lista_invertida <- rev(lista)
+print(lista_invertida)
+
+#Exercicio Dificil: Crie uma lista de listas (matriz)
+#de tamanho 3x3 e calcule a soma de cada linha.
+matriz <- list(c(1,2,3), c(4,5,6), c(7,8,9))
+soma_linhas <- sapply(matriz, sum)
+print(soma_linhas)
+
+# Tuplas em Python
+# Exercício fácil: Crie uma tupla contendo os números de 1 a 5 e imprima-o.
+tupla <- list(1, 2, 3, 4, 5) # Não tem tupla em R.
+print(tupla)
+
+# Tuplas em Python
+# Exercício fácil: Crie uma tupla contendo os números de 1 a 5 e imprima o terceiro elemento.
+tupla <- list(1, 2, 3, 4, 5) # Não tem tupla em R.
+print(tupla[[3]])
+
+#Exercício médio: Crie uma tupla contendo três tuplas internas.
+# Cada uma com dois elementos, e imprima-a.
+tupla_1 <- list(list(1, 2), list(3, 4), list(5,6))
+print(tupla_1)
+
+# Exercício médio: Concatene duas tuplas (1, 2, 3) e (4, 5, 6).
+lista1 <- list(1, 2, 3)
+lista2 <- list(4, 5, 6)
+lista_concatenada <- c(lista1, lista2)
+print(lista_concatenada)
+
+# Exercício difícil: Crie uma tupla com os elementos (1, 2, 3, 4, 5,6)
+# Verifique se o número 3 está na tupla
+lista <- list(1, 2, 3, 4, 5, 6)
+existe <- 3 %in% lista
+print(existe)
+
+# Exercício difícil: Crie uma tupla com os elementos (1, 2, 3, 4, 5,6)
+# e encontre o índice do número 4
+lista <- list(1, 2, 3, 4, 5,6)
+indice <- which(unlist(lista) == 4)
+print(indice)
+
+# Dicionário em Python
+# Exercício fácil: Crie um dicionário com as chaves 'nome', 'idade', e 'cidade'
+# e valores 'Ana', 25 e 'São Paulo'
+dicionario = 
