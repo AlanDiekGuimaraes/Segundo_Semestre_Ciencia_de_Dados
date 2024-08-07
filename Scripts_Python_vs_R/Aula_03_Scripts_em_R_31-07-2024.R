@@ -36,4 +36,3 @@ print(x)
 
 dias_da_semana <- factor(c('Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'), levels = c('Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'))
 print(dias_da_semana[3])
-
