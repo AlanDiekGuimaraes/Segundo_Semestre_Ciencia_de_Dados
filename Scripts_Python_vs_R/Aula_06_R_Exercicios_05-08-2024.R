@@ -247,5 +247,16 @@ print(resultado)
 resultado = (12 %% 2 == 0) & (12 > 10 & 12 < 15)
 print(resultado)
 
-# Verifique se um número é multiplo de 3 ou 5 e se está entre 20 e 30.
-numero <- 
+# Verifique se um número é múltiplo de 3 ou 5 e se está entre 20 e 30.
+numero <- 25
+resultado = (numero %% 3 == 0 | numero %% 5 == 0) & (numero > 20 & numero < 30)
+print(resultado)
+
+# Crie uma função que verifica se uma pessoa é elegível para um prêmio com base nas seguintes condições:
+# Deve ter mais de 18 anos e deve ser um membro ativo, ou deve ter mais de 60 anos.
+elegivel_para_premio <- function(idade, membro_ativo)
+  return((idade > 18 & membro_ativo) | (idade > 60))
+
+print(elegivel_para_premio(25, TRUE))
+print(elegivel_para_premio(65, FALSE))
+print(elegivel_para_premio(30, FALSE))
