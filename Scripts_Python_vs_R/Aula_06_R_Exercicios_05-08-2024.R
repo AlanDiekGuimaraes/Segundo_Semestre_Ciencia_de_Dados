@@ -177,3 +177,75 @@ print(idade)
 dicionario <- list(nome='Ana', idade='25', cidade='São Paulo')
 dicionario$profissao <- 'Engenheiro'
 print(dicionario)
+
+# Remova a chave 'cidade' dp dicionário
+# {'nome': 'Ana', 'idade': '25', 'cidade. : 'São paulo'}
+dicionario <- list(nome='Ana', idade='25', cidade='São Paulo')
+dicionario['cidade'] <- NULL
+print(dicionario)
+
+# Crie um dicionário aninhado para armazenar informações de várias pessoas, onde cada pessoa tem um nome, idade e cidade.
+dicionario <- list(
+  pessoa1 = list(nome='Ana', idade=25, cidade='São Paulo'),
+  pessoa2 = list(nome='Brenda', idade=7, cidade='São Caetano do Sul'),
+  pessoa3 = list(nome='Sandra', idade=35, cidade='São Caetano do Sul'),
+  pessoa4 = list(nome='Alan', idade=36, cidade='Uauá')
+)
+print(dicionario)
+
+# Percorra um dicionário aninhado e imprima as informações de cada pessoa no formato 'Nome: Ana, Idade: 25, Cidade: São Paulo.
+dicionario <- list(
+  pessoa1 = list(nome='Ana', idade='25', cidade='São Paulo'),
+  pessoa2 = list(nome='Brenda', idade='7', cidade='São Caetano do Sul'),
+  pessoa3 = list(nome='Sandra', idade='35', cidade='São Caetano do Sul'),
+  pessoa4 = list(nome='Alan', idade='36', cidade='Uauá')
+)
+for (pessoa in dicionario){
+  print(paste('Nome:', pessoa$nome, 'idade:', pessoa$idade, 'Cidade:', pessoa$cidade))
+}
+
+# Operadores em R
+# Aritméticos
+# Some dois números, 10 e 20
+soma <- 10 + 20
+print(soma)
+
+# Subtraia 30 de 15.
+subtracao <- 30 - 15
+print(subtracao)
+
+# Multiplique 6 por 7
+multiplicacao <- 6 * 7
+print(multiplicacao)
+
+# Divida 81 POR 9
+divisao <- 81/9
+print(divisao)
+
+# Calcule a exponenciação de 2 elevado a 10.
+exp = 2 ^ 10
+print(exp)
+
+# Calcule o resto da divisão de 29 por 5.
+resto <- 29 %% 5
+print(resto)
+
+# Lógicos
+# Verifique se o número 8 é maior que 5 e imprima o resultado.
+resultado <- 8 > 5
+print(resultado)
+
+# Verifique se o número 3 é menor ou igual a 10 e imprima o resultado.
+resultado <- 3 <= 10
+print(resultado)
+
+# Verifique se o número 7 e maior que 5 e menor que 10 e imprima o resultado.
+resultado = 5 < 7 & 7 < 10
+print(resultado)
+
+# Verifique se o número 12 é par e se está entre 10 e 15 e imprima o resultado. (um número é par se o resto da divisão por 2 é 0
+resultado = (12 %% 2 == 0) & (12 > 10 & 12 < 15)
+print(resultado)
+
+# Verifique se um número é multiplo de 3 ou 5 e se está entre 20 e 30.
+numero <- 
