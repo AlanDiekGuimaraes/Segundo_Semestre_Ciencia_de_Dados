@@ -14,7 +14,7 @@ for i in contato.keys():
 
 print('-'*50)
 print('ADICIONANDO USUÁRIO ')
-contato['usuario4'] = usuario3
+contato['usuario3'] = usuario3
 for i in contato.keys():
     print(f'Nome: {contato[i]["nome"]}, Telefone: {contato[i]["telefone"]}')
 
