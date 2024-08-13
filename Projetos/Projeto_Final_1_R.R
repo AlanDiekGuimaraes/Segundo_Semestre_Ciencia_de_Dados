@@ -22,6 +22,7 @@ for (usuario in contato){
 }
 print('----------------------------------------')
 print('DELETANDO USUÁRIO')
-
+contato[['usuario2']] <- NULL
 for (usuario in contato){
   print(paste('Nome:', usuario$nome, 'Telefone:', usuario$telefone))
+}
