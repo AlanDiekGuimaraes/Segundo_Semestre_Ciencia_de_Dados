@@ -2,7 +2,7 @@
 # tarefas, marcar tarefas como concluídas e listar todas as tarefas com seus
 # status. O sistema deve utilizar variáveis e operações diretamente, sem a utilização de funções.
 
-tarefa3 = {'tarefa': 'Projeto 01', 'data vencimento': '13/08/2024','status': 'pendente..'}
+tarefa3 = {'tarefa': 'Projeto 01', 'data vencimento': '13/08/2024', 'status': 'pendente..'}
 tarefa4 = {'tarefa': 'Projeto 02', 'data vencimento': '13/07/2024', 'status': 'pendente..'}
 tarefa5 = {'tarefa': 'Ativ. Sala', 'data vencimento': '01/09/2024', 'status': 'pendente..'}
 
@@ -29,7 +29,7 @@ print('atualizando tarefas'.center(80).upper())
 
 for i, (chave,valor) in enumerate(tarefas.items()): # Atualizando as 4 primeiras tarefas.
     if i < 4:
-        tarefas[chave]['status'] = 'Concluído'
+        tarefas[chave]['status'] = 'Concluído.'
 for i in tarefas.keys():
     print(f'|Tarefa: {tarefas[i]['tarefa']} | Data do Vencimento {tarefas[i]['data vencimento']} | Status: {tarefas[i]['status']} |'.center(80))
 
