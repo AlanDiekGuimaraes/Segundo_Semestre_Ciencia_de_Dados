@@ -8,18 +8,18 @@ contato = {
     'usuario2' : {'nome': 'Vinicius', 'telefone': '11.8.8888.8888'},
 }
 print('-'*50)
-print('CONTATOS')
+print('CONTATOS'.center(50))
 for i in contato.keys():
     print(f'Nome: {contato[i]["nome"]}, Telefone: {contato[i]["telefone"]}')
 
 print('-'*50)
-print('ADICIONANDO USUÁRIO ')
+print('ADICIONANDO USUÁRIO'.center(50))
 contato['usuario3'] = usuario3
 for i in contato.keys():
     print(f'Nome: {contato[i]["nome"]}, Telefone: {contato[i]["telefone"]}')
 
 print('-'*50)
-print('DELETANDO USUÁRIO ')
+print('DELETANDO USUÁRIO'.center(50))
 del contato['usuario2']
 for i in contato.keys():
     print(f'Nome: {contato[i]["nome"]}, Telefone: {contato[i]["telefone"]}')
