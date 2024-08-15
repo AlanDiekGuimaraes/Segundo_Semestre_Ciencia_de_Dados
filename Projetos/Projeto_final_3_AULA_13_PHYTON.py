@@ -28,7 +28,4 @@ def Lista_numeros(lista):
         print(f'Média: {sum(lista)/len(lista)}')
     except:
         print('Deu algum ERRO na lista')
-
-
-
 print(Lista_numeros(lista))
