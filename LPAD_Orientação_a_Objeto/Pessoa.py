@@ -50,7 +50,7 @@ class PessoaFisica(Pessoa):
 
 # CLASSE PESSOA JURIDICA
 class PessoaJuridica(Pessoa):
-    def __init__(self, nome='', rendimento=0.0, endereco=None, cnpj='', nome_empresa=''):
+    def __init__(self, nome='', rendimento=0.0, endereco=None, cnpj=''):
         if endereco is None:
             endereco = Endereco()
 
@@ -58,6 +58,6 @@ class PessoaJuridica(Pessoa):
 
         # Atributos da propria classe
         self.cnpj = cnpj
-        self.nome_empresa = nome_empresa
+
 
 

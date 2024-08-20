@@ -74,7 +74,7 @@ def main():
                    nova_pj.nome = input('Digite o nome da pessoa jurídica: ')
                    nova_pj.cnpj = input('Digite o CNPJ: ')
                    nova_pj.rendimento = float(input('Digite o rendimento mensal da sua empresa: '))
-                   nova_pj.nome_empresa = input('Digite o nome da empresa: ')
+
 
                    # Cadastrar Endereço
                    novo_endereco_pj.logradouro = input('Digite o logradouro: ')
@@ -87,7 +87,13 @@ def main():
                    lista_pj.append(nova_pj)
                    print('Cadastro Realizado com sucesso!!')
                elif opcao_pj == '2':
-                   pass
+                   if lista_pj:
+                       for cada_pj in lista_pj:
+                           print(f'Razão Social: {cada_pj.nome}')
+                           print(f'CNPJ: {cada_pj.cnpj}')
+                           print(f'Rendimento: {cada_pj.rendimento}')
+
+
 
 
 
