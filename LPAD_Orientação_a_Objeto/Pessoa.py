@@ -28,8 +28,6 @@ class PessoaFisica(Pessoa):
 
         super().__init__(nome, rendimento, endereco) # Chama o construtor da superclasse pessoa para inicializar os atributos herdados
 
-
-
         # Atributos da propria classe
         self.cpf = cpf
         self.dataNascimento = dataNascimento
@@ -59,5 +57,32 @@ class PessoaJuridica(Pessoa):
         # Atributos da propria classe
         self.cnpj = cnpj
 
+    def calcular_imposto(self, rendimento: float) -> float:
+        # Sem importo para rendimentos até 1500
+        if rendimento <= 8100:
+            return 0
+        elif rendimento > 8100 or rendimento <= 15000:
+            # 2% sobre o rendimento
+            # return (rendimento / 100) * 2
+            return rendimento * 0.02
+        elif rendimento > 15000 or rendimento <= 25000:
+            # 3.5% sobre o rendimento
+            return (rendimento / 100) * 3.5
+        else:
+            # 5% sobre o rendimento
+            return (rendimento / 100) * 5
+
+
+
+
+class SalvarArquivo():
+    def __init__(self):
+
+    def salvar(self):
+        self.exportar_csv('database.csv')
+    def exportar_csv(self, nome_arquivo):
+        with open(nome_arquivo, 'w') as arquivo:
+            linhas = arquivo.readlines()
+            for linha in linhas:
 
 

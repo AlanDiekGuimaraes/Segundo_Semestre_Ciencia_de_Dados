@@ -10,11 +10,13 @@ def main():
     lista_pf = []
     lista_pj = []
     while True:
-        opcao = input('''Escolha uma opção: 1 - Pessoa Física | 2 - Pessoa Jurídica | 0 - Sair: ''')
+        print('Escolha uma opção: \n1 - Pessoa Física \n2 - Pessoa Jurídica \n0 - Sair: ')
+        opcao = input()
 
         if opcao == '1':
             while True:
-                opcao_pf = input('''Escolha uma opção: 1 - Cadastrar Pessoa Física | 2 - Listar Pessoa Física | 0 - Voltar menu anterior: ''')
+                print('''Escolha uma opção: \n1 - Cadastrar Pessoa Física \n2 - Listar Pessoa Física \n3 - Excluir Pessoa Física \n0 - Voltar menu anterior: ''')
+                opcao_pf = input()
                 # Cadastrar uma pessoa física
                 if opcao_pf == '1':
                     nova_pf = PessoaFisica()
@@ -56,6 +58,21 @@ def main():
                             input()
                     else:
                         print('Lista Vazia')
+                # REMOVENDO pessoa física da lista
+                elif opcao_pf == '3':
+                    print('Informe o CPF da pessoa a ser excluída')
+                    cpf_para_remover = input()
+
+                    pessoa_f_encontrada = False
+                    for capa_pf in lista_pf:
+                        if cada_pf.cpf == cpf_para_remover:
+                            lista_pf.remove(capa_pf)
+                            pessoa_f_encontrada = True
+                            print(f'Pessoa física removida com sucesso!!')
+
+                            break
+                    if not pessoa_f_encontrada:
+                        print('Nenhuma pessoa encontrada')
 
                 # SAIR DO MENU ATUAL
                 elif opcao_pf == '0':
@@ -67,7 +84,8 @@ def main():
 
         elif opcao == '2':
            while True:
-               opcao_pj = input('Escolha uma opção: 1 - Cadastrar Pessoa jurídica | 2 - Listar Pessoa jurídica | 0 - Voltar menu anterior: ')
+               print('Escolha uma opção: \n1 - Cadastrar Pessoa jurídica \n2 - Listar Pessoa jurídica \n3 - Excluir Pessoa Jurídica \n0 - Voltar menu anterior: ')
+               opcao_pj = input()
                if opcao_pj == '1':
                    nova_pj = PessoaJuridica()
                    novo_endereco_pj = Endereco()
@@ -92,15 +110,33 @@ def main():
                            print(f'Razão Social: {cada_pj.nome}')
                            print(f'CNPJ: {cada_pj.cnpj}')
                            print(f'Rendimento: {cada_pj.rendimento}')
+                           print(f'Endereço: {cada_pj.endereco.logradouro}, {cada_pj.endereco.numero}')
+                           print(f'Imposto a ser pago: {cada_pj.calcular_imposto(cada_pj.rendimento)}')
+                           print('Digite qualquer tecla para retornar ao menu')
+                           input()
+                   else:
+                       print('Lista Vazia')
 
+               elif opcao_pj == '3':
+                   print('Informe o CNPJ a ser excluído')
+                   cnpj_para_remover = input()
+                   pessoa_j_encontrada = False
+                   for cada_pj in lista_pj:
+                       if cada_pj.cnpj == cnpj_para_remover:
+                           lista_pj.remove(cada_pj)
+                           pessoa_j_encontrada = True
+                           print('Pessoa jurídica removida com sucesso!!!')
+                           break
+                   if not pessoa_j_encontrada:
+                       print('Nenhuma pessoa jurídica encontrada')
+               elif opcao_pj == '0':
+                   print('Voltando ao menu anterior')
+                   break
 
-
-
-
-
-
+               else:
+                   print('Opção Inválida, por favor digite uma das opções indicadas: ')
         elif opcao == '0':
-            print('Obrigado por utiliar o nosso sistema! Valeu')
+            print('Obrigado por utilizar o nosso sistema! Valeu')
             break
 
         else:
