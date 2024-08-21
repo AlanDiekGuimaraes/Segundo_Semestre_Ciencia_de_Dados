@@ -71,18 +71,3 @@ class PessoaJuridica(Pessoa):
         else:
             # 5% sobre o rendimento
             return (rendimento / 100) * 5
-
-
-
-
-class SalvarArquivo():
-    def __init__(self):
-
-    def salvar(self):
-        self.exportar_csv('database.csv')
-    def exportar_csv(self, nome_arquivo):
-        with open(nome_arquivo, 'w') as arquivo:
-            linhas = arquivo.readlines()
-            for linha in linhas:
-
-

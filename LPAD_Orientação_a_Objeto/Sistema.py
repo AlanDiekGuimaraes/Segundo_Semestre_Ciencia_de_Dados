@@ -89,6 +89,7 @@ def main():
                if opcao_pj == '1':
                    nova_pj = PessoaJuridica()
                    novo_endereco_pj = Endereco()
+
                    nova_pj.nome = input('Digite o nome da pessoa jurídica: ')
                    nova_pj.cnpj = input('Digite o CNPJ: ')
                    nova_pj.rendimento = float(input('Digite o rendimento mensal da sua empresa: '))
