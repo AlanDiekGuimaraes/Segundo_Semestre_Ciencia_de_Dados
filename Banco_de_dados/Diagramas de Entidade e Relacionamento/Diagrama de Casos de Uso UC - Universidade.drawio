@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.10">
+  <diagram name="Página-1" id="eBJkjOKqS5uiPgpf11QO">
+    <mxGraphModel dx="1436" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-17" value="&lt;span style=&quot;font-size: 14px; text-wrap: nowrap;&quot;&gt;Diagrama de Casos de Uso - Universidade&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;direction=south;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="203" y="240" width="427" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-48" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-1" target="KOdopKQrLEAZ2gZfIeln-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-1" value="Professor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="460" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-32" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-3" target="KOdopKQrLEAZ2gZfIeln-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-34" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-3" target="KOdopKQrLEAZ2gZfIeln-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-35" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-3" target="KOdopKQrLEAZ2gZfIeln-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-3" value="Aluno" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="380" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-69" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-5" target="KOdopKQrLEAZ2gZfIeln-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-5" value="Matricula" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="296" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-45" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-6" target="KOdopKQrLEAZ2gZfIeln-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-68" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-6" target="KOdopKQrLEAZ2gZfIeln-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-6" value="Recepcionista" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="346" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-7" target="KOdopKQrLEAZ2gZfIeln-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="300" />
+              <mxPoint x="100" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-7" value="EAD" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="270" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-36" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;endArrow=open;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-10" target="KOdopKQrLEAZ2gZfIeln-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-37" value="&amp;lt;&amp;lt; Estender&amp;nbsp;&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=6;rotation=354;" vertex="1" connectable="0" parent="KOdopKQrLEAZ2gZfIeln-36">
+          <mxGeometry x="0.006" y="1" relative="1" as="geometry">
+            <mxPoint x="3" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-10" value="Cancelar&lt;div&gt;Matricula&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="296" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-11" value="Ministra&lt;div&gt;Cursos&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="390" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-12" target="KOdopKQrLEAZ2gZfIeln-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="535" />
+              <mxPoint x="100" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-12" value="Responsável&lt;br&gt;Aluno" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="505" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-23" value="Assistir&lt;div&gt;Aulas&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="455" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-24" value="Criar&lt;div&gt;Conteúdo&lt;br&gt;Aulas&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="520" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-42" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-26" target="KOdopKQrLEAZ2gZfIeln-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-26" value="Faltas" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="515" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-41" value="&amp;lt;&amp;lt; Estender &amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=6;rotation=338;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="298.73599436059544" y="506" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-47" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="KOdopKQrLEAZ2gZfIeln-1" target="KOdopKQrLEAZ2gZfIeln-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-67" value="Realizar&lt;div&gt;Matricula&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="250" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KOdopKQrLEAZ2gZfIeln-70" value="&amp;lt;&amp;lt; Incluir &amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=6;rotation=336;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="443.99599436059543" y="290" as="geometry">
+            <mxPoint x="-0.15930540978897545" y="-7.614106762215249" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

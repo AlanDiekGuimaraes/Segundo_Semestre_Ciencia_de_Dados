@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.10">
+  <diagram name="Página-1" id="loqwwpbR0w_u8K-CLdP2">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-38" value="&lt;span style=&quot;font-size: 14px; text-wrap: nowrap;&quot;&gt;Sistema Locadora&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;direction=south;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="120.25" y="77.5" width="234.75" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-37" value="&lt;span style=&quot;font-size: 14px; text-wrap: nowrap;&quot;&gt;Fornecedor de CD pirata&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;direction=south;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="540" y="110" width="159" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-1" target="Av4u-0GFgFN0ySk8rpnL-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-1" target="Av4u-0GFgFN0ySk8rpnL-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-1" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-3" target="Av4u-0GFgFN0ySk8rpnL-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-3" target="Av4u-0GFgFN0ySk8rpnL-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-3" value="Funcionario" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="120" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-6" target="Av4u-0GFgFN0ySk8rpnL-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-25" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-6" target="Av4u-0GFgFN0ySk8rpnL-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-6" value="Nota Fiscal" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="225" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-7" value="Registro&lt;div&gt;(Cadastro)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="135" y="120" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-10" value="Diagrama de Casos de Uso — UC (USE CASE)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="254" y="10" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-11" value="Alugar Filmes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="135" y="175" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-12" target="Av4u-0GFgFN0ySk8rpnL-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-12" value="Comparar Filmes" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="135" y="230" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-1" target="Av4u-0GFgFN0ySk8rpnL-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-17" value="Pagar" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="200" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-11" target="Av4u-0GFgFN0ySk8rpnL-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-24" value="Comprovar&lt;div&gt;Compra&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="135" y="290" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-34" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-28" target="Av4u-0GFgFN0ySk8rpnL-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-28" value="Comprar&lt;div&gt;Filmes&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="574" y="160" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-29" value="Criador de&lt;div&gt;Cds&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="574" y="220" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-32" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Av4u-0GFgFN0ySk8rpnL-30" target="Av4u-0GFgFN0ySk8rpnL-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Av4u-0GFgFN0ySk8rpnL-30" value="Perigo" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="160" width="30" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
