@@ -13,8 +13,8 @@ opcoes.append('Todas as estados')
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Venda de Gasolina no Brasil'),
-    html.H2(children='Quantidade de Lts de gasolina vendida por estado'),
+    html.H1(children='Venda de combustível no Brasil'),
+    html.H2(children='Quantidade de Lts de combustível vendida por estado'),
     dcc.Dropdown(opcoes, value='Todas as estados', id='lista_estado'),
     
     dcc.Graph(
