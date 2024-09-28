@@ -29,6 +29,7 @@ CREATE TABLE tb_proprietario(
     FOREIGN KEY(id_carro) REFERENCES tb_carros(id)
 );
 
+-- CRIADO TABELA NO BANCO DE DADOS
 CREATE TABLE historico_preco(
 	id INT(10) NOT NULL AUTO_INCREMENT,
     data_modificacao DATETIME,
@@ -38,3 +39,10 @@ CREATE TABLE historico_preco(
     PRIMARY KEY (id),
     FOREIGN KEY (id_carro) REFERENCES tb_carros(id)
 );
+-- ADICIONANDO COLUNAS NA TABELA
+ALTER TABLE tb_proprietario ADD idade INT(3) NOT NULL;
+
+-- EXCLUINDO COLUNAS NA TABELA
+ALTER TABLE tb_proprietario DROP COLUMN idade;
+
+SELECT * FROM tb_proprietario;
