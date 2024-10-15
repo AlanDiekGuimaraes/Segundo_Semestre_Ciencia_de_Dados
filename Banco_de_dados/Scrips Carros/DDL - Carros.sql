@@ -29,6 +29,8 @@ CREATE TABLE tb_proprietario(
     FOREIGN KEY(id_carro) REFERENCES tb_carros(id)
 );
 
+ALTER TABLE tb_proprietario ADD data_nascimento DATE;
+
 -- CRIADO TABELA NO BANCO DE DADOS
 CREATE TABLE historico_preco(
 	id INT(10) NOT NULL AUTO_INCREMENT,
