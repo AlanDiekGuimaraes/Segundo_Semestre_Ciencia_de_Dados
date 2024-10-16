@@ -1,4 +1,4 @@
--- CARROS
+tb_atendimentotb_atendimento-- CARROS
 USE bd_carro;
 
 -- Crie um stored procedure que insira um novo carro na tabela carros, fornecendo os valores da marca, modelo, ano, valor, cor e número de vendas.
@@ -159,12 +159,25 @@ CALL atualizarDadosCliente('2', 'Gorete Guimarães', 'Rua: Maria Rita, 15', '074
 -- EXERCICIO 3. Crie uma stored procedure que registre um novo atendimento de um pet, verificando se o veterinário e o pet existem.
 DELIMITER $$
 CREATE PROCEDURE registrarAtendimento(
+    IN id_atendimento_p INT,
     IN id_pet_p INT,
     IN id_veterinario_p INT,
     IN data_atendimento_p DATE,
     IN descricao_p VARCHAR(200)
 )
 BEGIN
-   -- Lógica
+DECLARE v_pet INT;
+DECLARE v_vet INT;
+   SELECT COUNT(*) INTO v_pet FROM tb_pets WHERE id_pet = id_pet_p;
+   SELECT COUNT(*) INTO v_vet FROM tb_veterinarios WHERE id_veterinario = id_veterinario_p;
+   -- Se ambos existem , insere o atendimento.
+   
+IF v_pet > 0 AND v_vet > 0 THEN
+	INSERT INTO tb_atendimento (id_atendimento, id_pet, id_veterinario, data_atendimento, descricao)
+	VALUES (id_atendimento_p, id_pet_p, id_veterinario_p, data_atendimento_p, descricao_p);
+ELSE
+	SIGNAL SQLSTATE '45000'
+	SET MESSAGE_TEXT = 'Pet ou veterinario não encontrado.'
+END IF;
 END $$
 DELIMITER ;
