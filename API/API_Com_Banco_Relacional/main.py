@@ -49,9 +49,7 @@ def selecionar_carros():
     # Executa uma consulta no banco de dados para obter todos os registros da tabela tb_carros.
     # O método query.all() retorna uma lista de objetos 'carros'
     carro_objetos = Carros.query.all()
-    
     carro_json = [carro.to_json() for carro in carro_objetos]
-    
     return gera_response(200, "carros", carro_json)
 
 
@@ -105,7 +103,7 @@ def atualizar_carro(id):
         
            
     except Exception as e:
-        
+        return gera_response()
 
 
 
