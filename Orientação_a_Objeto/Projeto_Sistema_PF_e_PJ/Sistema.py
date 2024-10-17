@@ -1,4 +1,4 @@
-# 1 - Pessoa Fisica | 2 - Pessoa Juridica | 3 - Sair
+# 1 - Pessoa Física | 2 - Pessoa Jurídica | 3 - Sair
 # 1 - Cadastrar Pessoa Física / 2 - Listar Pessoa Física / 3 - Sair
 # 1 - Cadastrar Pessoa Jurídica / 2 - Listar Pessoa Jurídica / 3 - Sair
 from datetime import date, datetime
