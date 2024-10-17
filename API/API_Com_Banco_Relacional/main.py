@@ -12,7 +12,7 @@ app = Flask("carros")
 # Por padrão, em aplicações em produção, isso fica FALSE. 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 # Configurando o Banco de dados.
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:senai%40134@127.0.0.1/SistemasCarros"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:senai%40134@127.0.0.1/bd_carro"
                                     # Banco | Usuário | Senha | Endereço IP do banco  | Nome da base de dados
 
 #Configuramos a variável que representará o banco
@@ -20,6 +20,7 @@ mybd = SQLAlchemy(app)
 
 # Definindo a estrutura da tabela carros
 class Carros(mybd.Model):
+    __tablename__ = 'tb_carros'
     id = mybd.Column(mybd.Integer, primary_key = True)
     marca = mybd.Column(mybd.String(100))
     modelo = mybd.Column(mybd.String(100))
@@ -30,16 +31,8 @@ class Carros(mybd.Model):
 
 
 # Convertendo a tabela em Json
-def to_json(self):
-    return{
-        "id": self.id,
-        "marca": self.marca,
-        "modelo": self.modelo,
-        "valor": self.valor,
-        "cor": self.cor,
-        "numero_vendas": self.numero_vendas,
-        "ano": self.ano
-    }
+    def to_json(self):
+        return{"id": self.id, "marca": self.marca, "modelo": self.modelo, "valor": self.valor, "cor": self.cor, "numero_vendas": self.numero_vendas, "ano": self.ano}
 
 
 # *************** API *****************
@@ -52,14 +45,11 @@ def selecionar_carros():
     carro_json = [carro.to_json() for carro in carro_objetos]
     return gera_response(200, "carros", carro_json)
 
-
 # selecionar individual (Por ID)
-
 @app.route("/carros/<id>", methods=["GET"])
 def seleciona_carro_id(id):
     carro_objetos = Carros.query.filter_by(id=id).first()
     carro_json = carro_objetos.to_json()
-    
     return gera_response(200, "carros", carro_json)
     
 # Cadastrar 
@@ -79,7 +69,9 @@ def criar_carro():
             )
         
         mybd.session.add(carro)
-        mybd.session.commit(201, "carros", carro.to_json(), "Criado com sucesso!!!")
+        mybd.session.commit()
+        
+        return gera_response(201, "carros", carro.to_json(), "Criado com sucesso!!!")
         
     except Exception as e:
         print("Erro", e)
@@ -97,21 +89,37 @@ def atualizar_carro(id):
     try:
         if("marca" in body):
             carro_objetos.marca = body["marca"]
-        
-        
-        
-        
-           
+        if ("modelo" in body):
+            carro_objetos.modelo = body["modelo"]
+        if ("valor" in body):
+            carro_objetos.valor = body["valor"]
+        if ("cor" in body):
+            carro_objetos.cor = body["cor"]
+        if ("numero_vendas" in body):
+            carro_objetos.numero_vendas = body["numero_vendas"]
+        if ("ano" in body):
+            carro_objetos.ano = body["ano"]
+
+        mybd.session.add(carro_objetos)
+        mybd.session.commit()
+        return gera_response(200, "carros", carro_objetos.to_json(), "Atualizado com sucesso!!!")
+    
     except Exception as e:
-        return gera_response()
+        print('Erro', e)
+        return gera_response(400, "carros", {}, "Erro ao atualizar.")
 
-
-
-
-
-
-
-
+@app.route("/carros/<id>", methods=["DELETE"])
+def deletar_carro(id):
+    carro_objetos = Carros.query.filter_by(id=id).first()
+    
+    try:
+        mybd.session.delete(carro_objetos)
+        mybd.session.commit()
+        
+        return gera_response(200, "carros", carro_objetos.to_json(),  "Deletado com sucesso!!!")
+    except Exception as e:
+        print("Erro", e)
+        return gera_response(400, "carros", {}, "Erro ao deletar.")
 
 
 def gera_response(status, nome_conteudo, conteudo, mensagem=False):
@@ -119,6 +127,8 @@ def gera_response(status, nome_conteudo, conteudo, mensagem=False):
     body[nome_conteudo] = conteudo
     if (mensagem):
         body["mensagem"] = mensagem
+        
     
     return Response(json.dumps(body), status=status, mimetype="application/json")
     
+app.run(port=5000, host='localhost', debug=True)
