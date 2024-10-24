@@ -87,7 +87,7 @@ def graficos(df_selecionado):
     
     # Criação dos gráficos
     # 4 abas -> Gráficos de Barras, Gráfico de linhas, Gráfico de pizza e dispersão. 
-    graf1, graf2, graf3, graf4, graf5, graf6 = st.tabs(["Gráfico de Barras", "Gráfico de Linhas", "Gráfico de pizza", "Gráfico de Dispersão", "Gráfico de Barras", "Gráficos"])
+    graf1, graf2, graf3, graf4, graf5, graf6 = st.tabs(["Gráfico de Barras", "Gráfico de Linhas", "Gráfico de pizza", "Gráfico de Dispersão", "Gráfico de Barras", "Gráfico de Linhas"])
     
     
     # Primeiro gráfico.     
@@ -172,19 +172,17 @@ def graficos(df_selecionado):
         st.plotly_chart(fig_valores5, use_container_width=True)
     
     with graf6:
-        dados6 = df_selecionado.groupby("marca").count()[["valor"]].sort_values(by="valor", ascending=False)
+        st.write("Grafico de linhas")
         
-        group_labels = ['Group 1', 'Group 2', 'Group 3']
+        dados6 = df_selecionado[["valor", "marca"]]
         
-        fig_valores6 = ff.create_distplot(
+        fig_valores6 = px.area(
             dados6,
-            group_labels, 
-            bin_size=[.1, .25, .5])
-
-        # Plot!
-        st.plotly_chart(fig_valores6, use_container_width=True)
-       
-    
+            x=dados6.index,
+            y="valor",
+            title="Gráfico de linha"
+            )
+        st.area_chart(fig_valores6, use_container_width=True)
     
         
 # ********************* BARRA DE PROGRESSO *********************
