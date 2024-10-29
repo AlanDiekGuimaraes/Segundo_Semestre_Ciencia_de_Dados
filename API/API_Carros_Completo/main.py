@@ -108,6 +108,8 @@ def atualizar_carro(id):
         print('Erro', e)
         return gera_response(400, "carros", {}, "Erro ao atualizar.")
 
+
+# DELETE
 @app.route("/carros/<id>", methods=["DELETE"])
 def deletar_carro(id):
     carro_objetos = Carros.query.filter_by(id=id).first()
