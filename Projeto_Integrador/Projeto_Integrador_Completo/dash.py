@@ -21,14 +21,14 @@ st.sidebar.header("Selecione a informação para gerar o gráfico")
 # Seleção da coluna X  |  selectbox ==> Cria uma caixa de seleção na barra lateral. 
 colunaX = st.sidebar.selectbox(
     "Eixo X",
-    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro"],
+    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro", "Regiao"],
     index = 0
 )
 
 # Seleção da coluna Y  |  selectbox ==> Cria uma caixa de seleção na barra lateral. 
 colunaY = st.sidebar.selectbox(
     "Eixo Y",
-    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro"],
+    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro", "Regiao"],
     index = 1
 )
 
@@ -98,7 +98,7 @@ if filtros("poeira"):
         value = (float(df["poeira"].min()), float(df["poeira"].max())),  # Faixa de Valores selecionado.
         step = 0.1   # Incremento para cada movimento do slider. 
     )
-
+# Tempo Registro
 if filtros("tempo_registro"):
     # Converter os valores mínimo e máximo para timestamp
     min_timestamp = df["tempo_registro"].min().timestamp()
@@ -109,13 +109,23 @@ if filtros("tempo_registro"):
         min_value=min_timestamp,  # Valor Mínimo como timestamp.
         max_value=max_timestamp,  # Valor Máximo como timestamp.
         value=(min_timestamp, max_timestamp),  # Faixa de Valores selecionado.
-        format= "DD-MM-YY - hh:mm"  # Formato de exibição
+        format="DD-MM-YY - hh:mm"  # Formato de exibição (não vai afetar a seleção)
     )
+# Região
+if filtros("Regiao"):
+    Regiao_range = st.sidebar.slider(
+        "Regiao",
+        min_value = (df["Regiao"].min()),  # Valor Mínimo.
+        max_value = (df["Regiao"].max()),  # Valor Máximo.
+        value = ((df["Regiao"].min()), (df["Regiao"].max())),  # Faixa de Valores selecionado.
+        step = 0.1   # Incremento para cada movimento do slider. 
+    )
+
+
+
     # Converter o range de volta para datetime
     tempo_registro_range = (pd.to_datetime(tempo_registro_range[0], unit='s'),
                             pd.to_datetime(tempo_registro_range[1], unit='s'))
-
-
 
 df_selecionado = df.copy()   # Cria uma copia do df original.:
 
@@ -160,6 +170,12 @@ if filtros("tempo_registro"):
     df_selecionado = df_selecionado[
         (df_selecionado["tempo_registro"] >= tempo_registro_range[0]) &
         (df_selecionado["tempo_registro"] <= tempo_registro_range[1])
+    ] 
+    
+if filtros("Regiao"):
+    df_selecionado = df_selecionado[
+        (df_selecionado["Regiao"] >= Regiao_range[0]) &
+        (df_selecionado["Regiao"] <= Regiao_range[1])
     ] 
 # **************************** GRÁFICOS ****************************
 
