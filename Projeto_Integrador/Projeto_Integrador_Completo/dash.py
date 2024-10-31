@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from query import *
+from datetime import datetime
 
 from Projeto_Integrador.Projeto_Integrador_Completo.query import conexao
 
@@ -108,15 +109,15 @@ if filtros("tempo_registro"):
         min_value=min_timestamp,  # Valor Mínimo como timestamp.
         max_value=max_timestamp,  # Valor Máximo como timestamp.
         value=(min_timestamp, max_timestamp),  # Faixa de Valores selecionado.
-        format="YYYY-MM-DD"  # Formato de exibição
+        format= "DD-MM-YY - hh:mm"  # Formato de exibição
     )
-
     # Converter o range de volta para datetime
     tempo_registro_range = (pd.to_datetime(tempo_registro_range[0], unit='s'),
                             pd.to_datetime(tempo_registro_range[1], unit='s'))
 
 
-df_selecionado = df.copy()   # Cria uma copia do df original.
+
+df_selecionado = df.copy()   # Cria uma copia do df original.:
 
 
 if filtros("umidade"):
