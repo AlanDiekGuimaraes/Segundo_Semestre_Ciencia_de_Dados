@@ -13,20 +13,21 @@ df = conexao(query)                  # Carregar os dados do MySQL.
 if st.button("Atualizar dados"):     # Botão para atualização dos dados.
     df = conexao(query)
 
+df['tempo_registro'] = pd.to_datetime(df['tempo_registro'])  # Converter para datetime
 # ****************************** MENU LATERAL ******************************
 st.sidebar.header("Selecione a informação para gerar o gráfico")  
 
 # Seleção da coluna X  |  selectbox ==> Cria uma caixa de seleção na barra lateral. 
 colunaX = st.sidebar.selectbox(
     "Eixo X",
-    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira"],
+    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro"],
     index = 0
 )
 
 # Seleção da coluna Y  |  selectbox ==> Cria uma caixa de seleção na barra lateral. 
 colunaY = st.sidebar.selectbox(
     "Eixo Y",
-    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira"],
+    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro"],
     index = 1
 )
 
@@ -97,6 +98,24 @@ if filtros("poeira"):
         step = 0.1   # Incremento para cada movimento do slider. 
     )
 
+if filtros("tempo_registro"):
+    # Converter os valores mínimo e máximo para timestamp
+    min_timestamp = df["tempo_registro"].min().timestamp()
+    max_timestamp = df["tempo_registro"].max().timestamp()
+    
+    tempo_registro_range = st.sidebar.slider(
+        "Tempo Registro",
+        min_value=min_timestamp,  # Valor Mínimo como timestamp.
+        max_value=max_timestamp,  # Valor Máximo como timestamp.
+        value=(min_timestamp, max_timestamp),  # Faixa de Valores selecionado.
+        format="YYYY-MM-DD"  # Formato de exibição
+    )
+
+    # Converter o range de volta para datetime
+    tempo_registro_range = (pd.to_datetime(tempo_registro_range[0], unit='s'),
+                            pd.to_datetime(tempo_registro_range[1], unit='s'))
+
+
 df_selecionado = df.copy()   # Cria uma copia do df original.
 
 
@@ -136,6 +155,11 @@ if filtros("poeira"):
         (df_selecionado["poeira"] <= poeira_range[1])
     ] 
 
+if filtros("tempo_registro"):
+    df_selecionado = df_selecionado[
+        (df_selecionado["tempo_registro"] >= tempo_registro_range[0]) &
+        (df_selecionado["tempo_registro"] <= tempo_registro_range[1])
+    ] 
 # **************************** GRÁFICOS ****************************
 
 def Home():
@@ -174,9 +198,11 @@ def Home():
 def graficos():
     st.title("Dashboard Monitoramento")
        
-    aba1, aba2  = st.tabs(
+    aba1, aba2, aba3, aba4  = st.tabs(
+        ["Gráfico de Barras",
         "Gráfico de Linhas",
-        "Gráfico de Dispersão"
+        "Gráfico de Dispersão",
+        "Gráfico de Área"]
         )
     
     with aba1:
@@ -194,17 +220,73 @@ def graficos():
                 grupo_dados1,       # De onde vem os dados.
                 x = colunaX,        # Eixo X
                 y = "contagem",     # Eixo Y com o nome que nós renomeamos no GrupBy
-                orientation = "h",  # Orientação do Gráfico
+                orientation = "v",  # Orientação do Gráfico
                 title = f"Contagem de Registros por {colunaX.capitalize()}", # Titulo do gráfico => A função capitalize() deixa tudo em maiúsculo. 
                 color_discrete_sequence = ["#0083b8"],       # Altera a cor 
                 template = "plotly_white"
             )
-            st.plotly_chart(fig_valores, use_container_width=True)
             
         except Exception as e:
-            st.error(f"Erro ao criar gráfico de linhas:  {e}")
-            
+            st.error(f"Erro ao criar gráfico de barras:  {e}")
+        st.plotly_chart(fig_valores, use_container_width=True)
 
+    with aba2:
+        if df_selecionado.empty:
+            st.write("Nenhum dado está disponível para gerar gráficos")
+            return
+
+        if colunaX == colunaY:
+            st.warning("Selecione uma opção diferente para os eixos X e Y")
+            return
+
+        try:
+            grupo_dados2 = df_selecionado.groupby(by=[colunaX])[colunaY].mean().reset_index(name=colunaY)
+            fig_valores2 = px.line(
+                grupo_dados2,
+                x=colunaX,
+                y=colunaY,
+                title=f"Gráfico de Linhas: {colunaX.capitalize()} vs {colunaY.capitalize()}",
+                line_shape='linear',  # Tipo de linha
+                markers=True  # Para mostrar marcadores nos pontos
+            )
+        except Exception as e:
+            st.error(f"Erro ao criar gráfico de linhas: {e}")
+        st.plotly_chart(fig_valores2, use_container_width=True)
+ 
+    with aba3:
+        if df_selecionado.empty:
+            st.write("Nenhum dado está disponível para gerar gráficos")
+            return
+
+        if colunaX == colunaY:
+            st.warning("Selecione uma opção diferente para os eixos X e Y")
+            return
+
+        try:
+            grupo_dados3 = df_selecionado.groupby(by=[colunaX]).size().reset_index(name=colunaY)
+            fig_valores3 = px.scatter(grupo_dados3, x = colunaX, y = colunaY)    
+            
+            st.plotly_chart(fig_valores3, use_container_width=True)
+            
+        except Exception as e:
+            st.error(f"Erro ao criar gráfico de disperção: {e}")
+    
+    with aba4:
+        if df_selecionado.empty:
+            st.write("Nenhum dado está disponível para gerar gráficos")
+            return
+        
+        if colunaX == colunaY:
+            st.warning("Selecione uma opção diferente para os eixos X e Y")
+            return
+        
+        try:
+            grupo_dados4 = df_selecionado.groupby(by=[colunaX]).size().reset_index(name=colunaY)
+            st.area_chart(grupo_dados4, x = colunaX, y = colunaY, color= ["#0083b8"], stack="center" )
+
+        except Exception as e:
+            st.error(f"Erro ao criar gráfico de dispersão: {e}")
+        
 # **************************** CHAMANDO A FUNÇÃO ****************************
 Home()
 graficos()
