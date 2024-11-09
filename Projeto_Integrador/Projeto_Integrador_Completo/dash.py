@@ -21,14 +21,14 @@ st.sidebar.header("Selecione a informação para gerar o gráfico")
 # Seleção da coluna X  |  selectbox ==> Cria uma caixa de seleção na barra lateral. 
 colunaX = st.sidebar.selectbox(
     "Eixo X",
-    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro", "Regiao"],
+    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro"],
     index = 0
 )
 
 # Seleção da coluna Y  |  selectbox ==> Cria uma caixa de seleção na barra lateral. 
 colunaY = st.sidebar.selectbox(
     "Eixo Y",
-    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro", "Regiao"],
+    options = ["umidade", "temperatura", "pressao", "altitude", "co2", "poeira", "tempo_registro"],
     index = 1
 )
 
@@ -111,21 +111,19 @@ if filtros("tempo_registro"):
         value=(min_timestamp, max_timestamp),  # Faixa de Valores selecionado.
         format="DD-MM-YY - hh:mm"  # Formato de exibição (não vai afetar a seleção)
     )
-# Região
-if filtros("Regiao"):
-    Regiao_range = st.sidebar.slider(
-        "Regiao",
-        min_value = (df["Regiao"].min()),  # Valor Mínimo.
-        max_value = (df["Regiao"].max()),  # Valor Máximo.
-        value = ((df["Regiao"].min()), (df["Regiao"].max())),  # Faixa de Valores selecionado.
-        step = 0.1   # Incremento para cada movimento do slider. 
-    )
-
-
-
     # Converter o range de volta para datetime
     tempo_registro_range = (pd.to_datetime(tempo_registro_range[0], unit='s'),
                             pd.to_datetime(tempo_registro_range[1], unit='s'))
+# Região
+if filtros("regiao"):
+    regiao_range = st.sidebar.slider(
+        "regiao",
+        min_value = float(df["regiao"].min()),  # Valor Mínimo.
+        max_value = float(df["regiao"].max()),  # Valor Máximo.
+        value = (float(df["regiao"].min()), (df["regiao"].max())),  # Faixa de Valores selecionado.
+        step = 0.1   # Incremento para cada movimento do slider. 
+    )
+
 
 df_selecionado = df.copy()   # Cria uma copia do df original.:
 
@@ -172,11 +170,8 @@ if filtros("tempo_registro"):
         (df_selecionado["tempo_registro"] <= tempo_registro_range[1])
     ] 
     
-if filtros("Regiao"):
-    df_selecionado = df_selecionado[
-        (df_selecionado["Regiao"] >= Regiao_range[0]) &
-        (df_selecionado["Regiao"] <= Regiao_range[1])
-    ] 
+
+    
 # **************************** GRÁFICOS ****************************
 
 def Home():
@@ -215,11 +210,12 @@ def Home():
 def graficos():
     st.title("Dashboard Monitoramento")
        
-    aba1, aba2, aba3, aba4  = st.tabs(
+    aba1, aba2, aba3, aba4, aba5  = st.tabs(
         ["Gráfico de Barras",
         "Gráfico de Linhas",
         "Gráfico de Dispersão",
-        "Gráfico de Área"]
+        "Gráfico de Área",
+        "Gráfico de ----"]
         )
     
     with aba1:
@@ -304,6 +300,29 @@ def graficos():
         except Exception as e:
             st.error(f"Erro ao criar gráfico de dispersão: {e}")
         
+    with aba5:
+        if df_selecionado.empty:
+            st.write('Nenhum dado está disponível para gerar o gráfico')
+            return
+        
+        if colunaX == colunaY:
+            st.warning('Selecione uma opção diferente para os eixos X e Y')
+            return
+        
+        try:
+            grupo_dados5 = df_selecionado
+            fig_barra = px.bar(grupo_dados5, 
+                               x=colunaX,
+                               y=colunaY,
+                               color='regiao',
+                               barmode='group',
+                               title='Comparação entre regiões'
+                               )
+            
+            st.plotly_chart(fig_barra, use_container_width=True)
+            
+        except Exception as e:
+            print(f'Erro ao criar o gráfico: {e}')
 # **************************** CHAMANDO A FUNÇÃO ****************************
 Home()
 graficos()
