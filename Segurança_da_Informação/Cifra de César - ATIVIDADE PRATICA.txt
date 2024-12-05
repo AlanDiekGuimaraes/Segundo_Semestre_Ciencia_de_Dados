@@ -1,0 +1,21 @@
+Cifra de César
+Palavra original: ASTROLOGIA
+Palavra criptografada (chave 5): FXYWTQTLNF
+
+
+Palavra original: ARTISTA
+Palavra criptografada (chave 2): CTVKUVC
+
+Palavra original: BRUTO
+Palavra criptografada (chave 15): QGJID
+
+
+Palavra original: SUBIDA
+Palavra criptografada (chave 0): SUBIDA
+
+
+Palavra original: ESPINHO
+Palavra criptografada (chave 8): MAXQVPW
+
+
+
